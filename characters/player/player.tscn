@@ -1,76 +1,298 @@
-[gd_scene load_steps=16 format=3 uid="uid://mdk6tw4tys1a"]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource type="Texture2D" uid="uid://dsrgxsm5u6qng" path="res://characters/player/Player-Idle.png" id="1_uvqqg"]
-[ext_resource type="Texture2D" uid="uid://bhd21e0m481vt" path="res://characters/player/Player-Walk.png" id="2_j6qw8"]
+[ext_resource path="res://characters/player/Player-Idle.png" type="Texture" id=1]
+[ext_resource path="res://characters/player/PlayerStates.gd" type="Script" id=2]
+[ext_resource path="res://characters/player/Player-Walk.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5hxy3"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="CircleShape2D" id=11]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_shus1"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(24, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wgn1q"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(48, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 24, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i18q7"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(72, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jenpl"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(96, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d044g"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(120, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_13cvg"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(144, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 120, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ov4hl"]
-atlas = ExtResource("1_uvqqg")
-region = Rect2(168, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 144, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tv2pg"]
-atlas = ExtResource("2_j6qw8")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 168, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tdfy6"]
-atlas = ExtResource("2_j6qw8")
-region = Rect2(24, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxgoi"]
-atlas = ExtResource("2_j6qw8")
-region = Rect2(48, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 24, 0, 24, 24 )
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hr0xv"]
-atlas = ExtResource("2_j6qw8")
-region = Rect2(72, 0, 24, 24)
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 48, 0, 24, 24 )
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kbxuu"]
-animations = [{
-"frames": [SubResource("AtlasTexture_5hxy3"), SubResource("AtlasTexture_shus1"), SubResource("AtlasTexture_wgn1q"), SubResource("AtlasTexture_i18q7"), SubResource("AtlasTexture_jenpl"), SubResource("AtlasTexture_d044g"), SubResource("AtlasTexture_13cvg"), SubResource("AtlasTexture_ov4hl")],
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 72, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": &"default",
-"speed": 8.0
-}, {
-"frames": [SubResource("AtlasTexture_tv2pg"), SubResource("AtlasTexture_tdfy6"), SubResource("AtlasTexture_yxgoi"), SubResource("AtlasTexture_hr0xv")],
-"loop": true,
-"name": &"walk",
+"name": "default",
 "speed": 5.0
-}]
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 6.0
+height = 0.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "walk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[sub_resource type="Animation" id=17]
+resource_name = "idleleft"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-frames = SubResource("SpriteFrames_kbxuu")
-animation = &"walk"
-playing = true
+[sub_resource type="Animation" id=18]
+resource_name = "idleright"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "default" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "walkleft"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "walk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "walkright"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "walk" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="Hitboxes" type="Area2D" parent="."]
+
+[node name="ObjectInteraction" type="CollisionShape2D" parent="Hitboxes"]
+position = Vector2( -2, 2 )
+shape = SubResource( 11 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 9 )
+animation = "walk"
+flip_h = true
+
+[node name="BodyCollision" type="CollisionShape2D" parent="."]
+position = Vector2( -2, 3 )
+shape = SubResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 16 )
+anims/idleleft = SubResource( 17 )
+anims/idleright = SubResource( 18 )
+anims/walkleft = SubResource( 19 )
+anims/walkright = SubResource( 20 )
